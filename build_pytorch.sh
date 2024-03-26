@@ -32,6 +32,9 @@ python3 setup.py bdist_wheel
 pip install dist/torch-${VER}-cp310-cp310-linux_aarch64.whl
 
 
+python -c "import torch;print(torch.cuda.is_available());device = torch.device('cuda', 0);print(device)"
+
+
 ####
 #>>> import torch
 #>>> torch.cuda.is_available()
