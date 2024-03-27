@@ -34,6 +34,7 @@ pip install dist/torch-${VER}-cp310-cp310-linux_aarch64.whl
 
 python -c "import torch;print(torch.cuda.is_available());device = torch.device('cuda', 0);print(device)"
 
+python -c "import torch; print(torch.__version__); print(torch.cuda.is_available()); a = torch.cuda.FloatTensor(2); print(a); b = torch.randn(2).cuda(); print(b); c = a + b; print(c)"
 
 ####
 #>>> import torch
