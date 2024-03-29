@@ -60,3 +60,10 @@ USE_CUDA=1 pip install -v -e . --no-use-pep517
 #torchaudio.utils.ffmpeg_utils.get_build_config()
 
 
+#############
+#sudo pip uninstall torch numpy
+#pip uninstall torch numpy
+#pip install ~/Downloads/torch-2.2.1-cp310-cp310-linux_aarch64.whl numpy
+
+
+
