@@ -12,7 +12,9 @@ conda create py310 python=3.10
 conda activate py310 
 
 pip3 install -r requirements.txt
-pip3 install scikit-build ninja cmake 
+pip3 install scikit-build ninja cmake
+
+pip install --upgrade cmake
 
 
 # 
