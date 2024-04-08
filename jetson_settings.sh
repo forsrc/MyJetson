@@ -1,4 +1,4 @@
-
+git reset --hard HEAD~1
 
 sudo iw dev wlan0 set power_save off
 
