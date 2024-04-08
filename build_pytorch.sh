@@ -1,9 +1,9 @@
 
 VER=2.2.1
 
-git clone --recursive --branch v${VER} http://github.com/pytorch/pytorch
+git clone --recursive --branch v${VER} http://github.com/pytorch/pytorch pytorch_$VER
 
-cd pytorch
+cd pytorch_$VER
 
 sudo apt-get install python3-pip cmake libopenblas-dev libopenmpi-dev
 
