@@ -8,7 +8,7 @@ cd pytorch_$VER
 sudo apt-get install python3-pip cmake libopenblas-dev libopenmpi-dev
 
 
-conda create py310 python=3.10
+conda create -n py310 python=3.10
 conda activate py310 
 
 pip3 install -r requirements.txt
