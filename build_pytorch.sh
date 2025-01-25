@@ -1,15 +1,15 @@
+sudo apt-get install python3-pip cmake libopenblas-dev libopenmpi-dev
+
+
+conda create -n py310 python=3.10
+conda activate py310 
+
 
 VER=2.2.1
 
 git clone --recursive --branch v${VER} http://github.com/pytorch/pytorch pytorch_$VER
 
 cd pytorch_$VER
-
-sudo apt-get install python3-pip cmake libopenblas-dev libopenmpi-dev
-
-
-conda create -n py310 python=3.10
-conda activate py310 
 
 pip3 install -r requirements.txt
 pip3 install scikit-build ninja cmake
@@ -24,7 +24,7 @@ export USE_QNNPACK=0
 export USE_PYTORCH_QNNPACK=0
 
 # Orin is based on Ampere Achitecture
-export TORCH_CUDA_ARCH_LIST="7.2;8.7"
+export TORCH_CUDA_ARCH_LIST="7.2;8.6"
 
 export PYTORCH_BUILD_VERSION=${VER}
 export PYTORCH_BUILD_NUMBER=1
