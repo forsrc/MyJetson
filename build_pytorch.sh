@@ -54,6 +54,8 @@ python -c "import torch; print(torch.__version__); print(torch.cuda.is_available
 pip install cmake ninja
 sudo apt install ffmpeg libavformat-dev libavcodec-dev libavutil-dev libavdevice-dev libavfilter-dev
 
+https://pytorch.org/audio/main/installation.html#compatibility-matrix
+
 git clone https://github.com/pytorch/audio
 cd audio
 USE_CUDA=1 pip install -v -e . --no-use-pep517
@@ -66,6 +68,11 @@ USE_CUDA=1 pip install -v -e . --no-use-pep517
 #sudo pip uninstall torch numpy
 #pip uninstall torch numpy
 #pip install ~/Downloads/torch-2.2.1-cp310-cp310-linux_aarch64.whl numpy
+
+
+
+https://github.com/pytorch/vision#installation
+
 
 git clone --branch v0.19.1 https://github.com/pytorch/vision torchvision_v0.19.1
 cd torchvision_v0.19.1
