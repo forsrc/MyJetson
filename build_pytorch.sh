@@ -70,6 +70,7 @@ USE_CUDA=1 pip install -v -e . --no-use-pep517
 #pip install ~/Downloads/torch-2.2.1-cp310-cp310-linux_aarch64.whl numpy
 
 
+#############
 
 https://github.com/pytorch/vision#installation
 
@@ -80,4 +81,8 @@ export BUILD_VERSION=0.19.1
 python3 setup.py install --user
 
 
+
+#############
+
+pip install torchtext
 
