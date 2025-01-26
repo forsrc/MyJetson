@@ -67,5 +67,10 @@ USE_CUDA=1 pip install -v -e . --no-use-pep517
 #pip uninstall torch numpy
 #pip install ~/Downloads/torch-2.2.1-cp310-cp310-linux_aarch64.whl numpy
 
+git clone --branch v0.19.1 https://github.com/pytorch/vision torchvision_v0.19.1
+cd torchvision_v0.19.1
+export BUILD_VERSION=0.19.1
+python3 setup.py install --user
+
 
 
