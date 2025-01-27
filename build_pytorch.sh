@@ -86,7 +86,7 @@ python3 setup.py install --user
 
 pip install torchtext
 
-
+https://pypi.jetson-ai-lab.dev/jp5/cu114
 #############cu124
 
 pip install http://jetson.webredirect.org/jp6/cu124/+f/5fe/ee5f5d1a75229/torch-2.3.0-cp310-cp310-linux_aarch64.whl
