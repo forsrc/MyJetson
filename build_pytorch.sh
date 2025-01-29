@@ -5,11 +5,13 @@ conda create -n py310 python=3.10
 conda activate py310 
 
 
-VER=2.2.1
+export VER=2.2.1
 
 git clone --recursive --branch v${VER} http://github.com/pytorch/pytorch pytorch_$VER
 
 cd pytorch_$VER
+git submodule update --init --recursive
+
 
 pip3 install -r requirements.txt
 pip3 install scikit-build ninja cmake
@@ -22,12 +24,20 @@ export USE_NCCL=0
 export USE_DISTRIBUTED=1
 export USE_QNNPACK=0
 export USE_PYTORCH_QNNPACK=0
+export USE_PRIORITIZED_TEXT_FOR_LD=1
 
 # Orin is based on Ampere Achitecture
 export TORCH_CUDA_ARCH_LIST="7.2;8.6"
 
 export PYTORCH_BUILD_VERSION=${VER}
 export PYTORCH_BUILD_NUMBER=1
+export L4T_BUILD_VERSION=35.3.1
+
+export CUDA_VER=11.4
+export PATH=/usr/local/cuda$CUDA_VER/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda$CUDA_VER/lib64:$LD_LIBRARY_PATH
+
+
 
 python3 setup.py bdist_wheel
 
