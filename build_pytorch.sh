@@ -34,8 +34,8 @@ export PYTORCH_BUILD_NUMBER=1
 export L4T_BUILD_VERSION=35.3.1
 
 export CUDA_VER=11.4
-export PATH=/usr/local/cuda$CUDA_VER/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda$CUDA_VER/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-$CUDA_VER/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-$CUDA_VER/lib64:$LD_LIBRARY_PATH
 
 
 
