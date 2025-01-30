@@ -15,9 +15,13 @@ mkdir build && cd build
 
 ############
 unset LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/cuda-11.4/lib64
 ../configure --prefix=/opt/glibc-2.32
 make -j$(nproc)
 sudo make install
+
+
+export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/cuda-11.4/lib64:/opt/jetson/glibc-2.32/lib
 
 
 
