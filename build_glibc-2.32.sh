@@ -8,7 +8,9 @@ cd glibc-2.32
 
 wget http://ftp.gnu.org/gnu/libc/glibc-2.32.tar.gz
 tar -xvzf glibc-2.32.tar.gz
-cd glibc-2.32
+mv glibc-2.32/* .
+rm -r glibc-2.32
+
 mkdir build && cd build
 
 ############
