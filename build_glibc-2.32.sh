@@ -21,7 +21,7 @@ make -j$(nproc)
 sudo make install
 
 
-export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/cuda-11.4/lib64:/opt/jetson/glibc-2.32/lib
+export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/cuda-11.4/lib64:/opt/glibc-2.32/lib
 
 
 
