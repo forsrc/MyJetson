@@ -91,7 +91,7 @@ export BUILD_VERSION=0.19.1
 python3 setup.py install --user
 
 
-
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu114
 #############
 
 pip install torchtext
