@@ -28,7 +28,7 @@ export USE_PYTORCH_QNNPACK=0
 export USE_PRIORITIZED_TEXT_FOR_LD=1
 
 # Orin is based on Ampere Achitecture
-export TORCH_CUDA_ARCH_LIST="7.0;7.2;7.5;8.0;8.6;9.0"
+export TORCH_CUDA_ARCH_LIST="7.2"
 
 export PYTORCH_BUILD_VERSION=${VER}
 export PYTORCH_BUILD_NUMBER=1
