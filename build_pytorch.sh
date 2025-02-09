@@ -10,6 +10,7 @@ export VER=2.2.1
 git clone --recursive --branch v${VER} http://github.com/pytorch/pytorch pytorch_$VER
 
 cd pytorch_$VER
+git submodule sync
 git submodule update --init --recursive
 
 
@@ -27,7 +28,7 @@ export USE_PYTORCH_QNNPACK=0
 export USE_PRIORITIZED_TEXT_FOR_LD=1
 
 # Orin is based on Ampere Achitecture
-export TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6;9.0"
+export TORCH_CUDA_ARCH_LIST="7.0;7.2;7.5;8.0;8.6;9.0"
 
 export PYTORCH_BUILD_VERSION=${VER}
 export PYTORCH_BUILD_NUMBER=1
@@ -37,6 +38,13 @@ export CUDA_VER=11.4
 export PATH=/usr/local/cuda-$CUDA_VER/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-$CUDA_VER/lib64:$LD_LIBRARY_PATH
 
+
+export CUDNN_INCLUDE_DIR=/usr/include
+export CUDNN_LIB_DIR=/usr/lib/aarch64-linux-gnu
+export USE_CUDA=1
+export USE_CUDNN=1
+export USE_NCCL=0
+export MAX_JOBS=8
 
 
 python3 setup.py bdist_wheel
