@@ -45,7 +45,7 @@ export USE_CUDA=1
 export USE_CUDNN=1
 export USE_NCCL=0
 export MAX_JOBS=8
-
+export CMAKE_MAKE_PROGRAM=/usr/bin/ninja
 
 python3 setup.py bdist_wheel
 
