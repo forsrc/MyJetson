@@ -74,11 +74,13 @@ sudo apt install ffmpeg libavformat-dev libavcodec-dev libavutil-dev libavdevice
 
 https://pytorch.org/audio/main/installation.html#compatibility-matrix
 
-export VER=2.2
+export VER=2.2.1
 git clone --recursive --branch v${VER} https://github.com/pytorch/audio audio_$VER
 cd audio_$VER
 
 USE_CUDA=1 pip install -v -e . --no-use-pep517
+BUILD_SOX=1 BUILD_KALDI=1 python3 setup.py bdist_wheel
+
 #import torchaudio
 #print(torchaudio.__version__)
 #torchaudio.utils.ffmpeg_utils.get_build_config()
