@@ -35,6 +35,7 @@ python3 setup.py bdist_wheel
 
 ########################
 
+
 git clone --recursive https://github.com/pytorch/audio.git
 cd audio
 git checkout v2.4.1
@@ -65,6 +66,17 @@ cmake .. -DCMAKE_BUILD_TYPE=Release -DUSE_LLVM=OFF -DUSE_CUDA=ON -DUSE_TENSORRT=
 make -j8
 cd ../python
 pip3 install -e .
+
+########################
+
+python3 -c "import torch; print(torch.__version__)"
+python3 -c "import torchvision; print(torchvision.__version__)"
+python3 -c "import torchaudio; print(torchaudio.__version__)"
+python3 -c "import torchtext; print(torchtext.__version__)"
+python3 -c "import tvm; print(tvm.__version__)"
+
+python -c "import torch;print(torch.cuda.is_available());device = torch.device('cuda', 0);print(device);print(torch.__version__)"
+python -c "import torch; print(torch.__version__); print(torch.cuda.is_available()); a = torch.cuda.FloatTensor(2); print(a); b = torch.randn(2).cuda(); print(b); c = a + b; print(c)"
 
 
 
