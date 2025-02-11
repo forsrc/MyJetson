@@ -43,16 +43,25 @@ python3 setup.py bdist_wheel
 pip3 install dist/*.whl
 
 #######################
-git clone --recursive https://github.com/pytorch/text.git
+git clone --recursivee
 cd text
 git checkout v2.4.1
 python3 setup.py install
 
 ########################
 
+git clone --recursive https://github.com/pytorch/data.git
+cd data
+git checkout v0.8.0
+# sed -i 's/torch.*/torch==2.4.1/' requirements.txt
+pip3 install -r requirements.txt
+python3 setup.py install # pip3 install torchdata --no-deps
+
+########################
+
 git clone https://github.com/pytorch/vision.git
 cd vision
-git checkout v0.15.1
+git checkout v0.19.1
 pip3 install -r requirements.txt
 python3 setup.py bdist_wheel
 pip3 install dist/*.whl
@@ -74,6 +83,7 @@ python3 -c "import torchvision; print(torchvision.__version__)"
 python3 -c "import torchaudio; print(torchaudio.__version__)"
 python3 -c "import torchtext; print(torchtext.__version__)"
 python3 -c "import tvm; print(tvm.__version__)"
+python3 -c "import torchdata; print(torchdata.__version__)"
 
 python -c "import torch;print(torch.cuda.is_available());device = torch.device('cuda', 0);print(device);print(torch.__version__)"
 python -c "import torch; print(torch.__version__); print(torch.cuda.is_available()); a = torch.cuda.FloatTensor(2); print(a); b = torch.randn(2).cuda(); print(b); c = a + b; print(c)"
