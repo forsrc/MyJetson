@@ -31,6 +31,18 @@ export CMAKE_PREFIX_PATH=$(python3 -c "import sys; print(sys.prefix)")
 export USE_PRIORITIZED_TEXT_FOR_LD=1
 pip3 install -r requirements.txt
 
+
+# https://github.com/pytorch/pytorch/commit/f217b470cc7ebacc62c8e87dbab8c4894d53e9b9
+vim CMakeLists.txt  # L541 L542
+```
+  set(ENV_LDFLAGS "$ENV{LDFLAGS}")
+  string(STRIP "${ENV_LDFLAGS}" ENV_LDFLAGS)
+  # Do not append linker flags passed via env var if they already there
+  if(NOT ${CMAKE_SHARED_LINKER_FLAGS} MATCHES "${ENV_LDFLAGS}")
+     set(CMAKE_SHARED_LINKER_FLAGS
+         "${CMAKE_SHARED_LINKER_FLAGS} ${ENV_LDFLAGS}")
+  endif()
+```
 python3 setup.py bdist_wheel
 
 ########################
