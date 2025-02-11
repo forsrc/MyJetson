@@ -7,6 +7,10 @@ pip3 install ninja cmake
 git clone --recursive https://github.com/pytorch/pytorch
 cd pytorch
 git checkout v2.4.1
+
+git clone --recursive --branch v2.4.1 https://github.com/pytorch/pytorch pytorch_2.4.1
+cd pytorch_2.4.1
+
 git submodule sync
 git submodule update --init --recursive
 
@@ -47,10 +51,13 @@ python3 setup.py bdist_wheel
 
 ########################
 
-
 git clone --recursive https://github.com/pytorch/audio.git
 cd audio
 git checkout v2.4.1
+
+git clone --recursive --branch v2.4.1 https://github.com/pytorch/audio audio_2.4.1
+cd audio_2.4.1
+
 python3 setup.py bdist_wheel
 pip3 install dist/*.whl
 
@@ -65,6 +72,10 @@ python3 setup.py install
 git clone --recursive https://github.com/pytorch/data.git
 cd data
 git checkout v0.8.0
+
+git clone --recursive --branch v0.8.0 https://github.com/pytorch/data data_0.8.0
+cd data_0.8.0
+
 # sed -i 's/torch.*/torch==2.4.1/' requirements.txt
 pip3 install -r requirements.txt
 python3 setup.py install # pip3 install torchdata --no-deps
@@ -74,6 +85,10 @@ python3 setup.py install # pip3 install torchdata --no-deps
 git clone https://github.com/pytorch/vision.git
 cd vision
 git checkout v0.19.1
+
+git clone --recursive --branch v0.19.1 https://github.com/pytorch/vision vision_0.19.1
+cd vision_0.19.1
+
 pip3 install -r requirements.txt
 python3 setup.py bdist_wheel
 pip3 install dist/*.whl
