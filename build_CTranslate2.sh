@@ -8,7 +8,7 @@ cd build
 cmake -DWITH_CUDA=ON -Bbuild_folder -DWITH_MKL=OFF ..
 cmake —build build_folder
 
-cmake -Bbuild_folder -DWITH_MKL=OFF -DOPENMP_RUNTIME=NONE -DWITH_CUDA=ON -DWITH_CUDNN=ON
+cmake -Bbuild_folder -DWITH_MKL=OFF -DOPENMP_RUNTIME=NONE -DWITH_CUDA=ON -DWITH_CUDNN=ON ..
 cmake —build build_folder
 
 cd build_folder
